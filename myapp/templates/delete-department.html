@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{%block title-block%}
+<title>movie-add</title>
+{%endblock%}
+{%block body_block%}
+{%for m in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{m}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {%endfor%}
+welcome{{request.user}}
+
+
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <h1>Delete Department</h1>
+    <p>Are you sure you want to delete the department "{{ department.name }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Delete</button>
+        <a href="{% url 'department-list' %}">Cancel</a>
+    </form>
+    </div>
+    <div class="col-4"></div>
+</div>
+
+{%endblock%}

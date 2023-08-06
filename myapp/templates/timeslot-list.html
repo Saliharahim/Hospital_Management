@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Time Slot</title>
+</head>
+<body>
+    <h1>Add Time Slot</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Time Slot</button>
+    </form>
+    <a href="{% url 'timeslot-list' %}">Back to Time Slot List</a>
+</body>
+</html>
